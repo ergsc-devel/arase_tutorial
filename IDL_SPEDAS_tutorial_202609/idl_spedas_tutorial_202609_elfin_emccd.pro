@@ -173,7 +173,7 @@ stop
 stop
 
   ;
-  ; --- (5) Plot the 120 km footprint of ELFIN on auroral image in the geographic coordinates
+  ; --- (5) Plot the footprint of ELFIN on auroral image in geographic coordinates
   ;
 
   get_data, 'emccd_asf_tja_image_raw_gmap_120', data=raw_gmap
