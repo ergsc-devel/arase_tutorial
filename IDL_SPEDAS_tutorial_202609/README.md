@@ -1,4 +1,4 @@
-# IDL SPEDAS Tutorial Material September 16, 2026
+# IDL SPEDAS Tutorial 資料 September 16, 2026
 
   |ファイル名|内容|
   |------|------|
