@@ -102,7 +102,7 @@ stop
   initct, 0, line_clr=8
 
   ; Plot setting
-  idx       = nn(raw,'2019-09-28/00:43:35') ; plot data from 00:43:35 UT
+  idx       = nn(raw.x,'2019-09-28/00:43:35') ; plot data from 00:43:35 UT
   nstep     = 100 ; 10 Hz data --> 10 s interval
   xgrid     = 115 ; pixel of horizontal grid on the all sky images and Keogram
   zrange    = [2000,2600] ; range of raw count
@@ -182,7 +182,7 @@ stop
 
   ; --- First panel
 
-  idx1 =  nn(raw,'2019-09-28/00:44:19') ; index of all sky camera data for 00:44:19 UT
+  idx1 =  nn(raw.x,'2019-09-28/00:44:19') ; index of all sky camera data for 00:44:19 UT
 
   plotxyz, raw_gmap.glon, raw_gmap.glat, reform(raw_gmap.y[idx1,*,*]) $
          , xrange=[15,25], yrange=[65,69], zrange=zrange $
@@ -194,12 +194,12 @@ stop
   get_data, 'ela_pos_geo_alt120_th'  , data=ela_glat ; geographic latitude of ELFIN
 
   oplot, ela_glon.y, ela_glat.y
-  idx_ela = nn(ela_glon,raw.x[idx1]) ; index of ELFIN data for 00:44:19 UT 
+  idx_ela = nn(ela_glon.x,raw.x[idx1]) ; index of ELFIN data for 00:44:19 UT 
   oplot, [ela_glon.y[idx_ela]], [ela_glat.y[idx_ela]], psym=1, symsize=3, thick=3
 
   ; --- Second panel
 
-  idx2 = nn(raw,'2019-09-28/00:44:28') ; index of all sky camera data for 00:44:28 UT
+  idx2 = nn(raw.x,'2019-09-28/00:44:28') ; index of all sky camera data for 00:44:28 UT
 
   plotxyz, raw_gmap.glon, raw_gmap.glat, reform(raw_gmap.y[idx2,*,*]) $
          , xrange=[15,25], yrange=[65,69], zrange=zrange $
@@ -208,7 +208,7 @@ stop
          , xtitle='Longitude [deg.]', ytitle='Latitude [deg.]', ztitle='[Raw Count]', addpanel=1
  
   oplot, ela_glon.y, ela_glat.y
-  idx_ela = nn(ela_glon,raw.x[idx2]) ; index of ELFIN data for 00:44:28 UT
+  idx_ela = nn(ela_glon.x,raw.x[idx2]) ; index of ELFIN data for 00:44:28 UT
   oplot, [ela_glon.y[idx_ela]], [ela_glat.y[idx_ela]], psym=1, symsize=3, thick=3
 
 stop
